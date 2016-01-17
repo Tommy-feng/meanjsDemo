@@ -35,6 +35,10 @@ module.exports = function (grunt) {
 			}
 		},
 
+    /*
+    jshint: js规范校验
+    jshint-stylish：美化输出的错误提示
+    **/
 		jshint: {
 			options: { 
 				jshintrc: '.jshintrc', 
@@ -46,11 +50,13 @@ module.exports = function (grunt) {
 			]
 		},
 
+    /*清除文件和文件夹*/
 		clean: {
 			app: ['.tmp'],
 			build: ['.tmp','<%= dirs.build %>/*','!<%= dirs.build %>/.git/*','!<%= dirs.build %>/.gitignore']
 		},
 
+    /*将bower引入的包插到html中*/
 		wiredep: {
 			html: {
 				src: ['<%= dirs.app %>/frontend/index.html'],
