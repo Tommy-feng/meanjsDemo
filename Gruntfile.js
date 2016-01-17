@@ -83,6 +83,7 @@ module.exports = function (grunt) {
 			build: ['compass:build','imagemin','svgmin']
 		},
 
+    /*根据浏览器的不同，在css前面添加前缀*/
 		autoprefixer: {
 			options: { 
 				browsers: ['last 1 version'] 
@@ -91,7 +92,8 @@ module.exports = function (grunt) {
 				files: [ { expand: true, cwd: '.tmp/css', src: '**/*.css', dest: '.tmp/css' } ] 
 			}
 		},
-
+    
+    /*配置angularjs添加依赖注入注释*/
 		ngAnnotate: {
 			angular: {
 				files: [{ expand: true, cwd: '.tmp/concat/js', src: ['scripts.js'], dest: '.tmp/concat/js' }]
